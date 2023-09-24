@@ -1,2 +1,2 @@
 # RPG
-Terminal RPG made in python
+Shell RPG made in python
