@@ -3,14 +3,25 @@ import random
 #height = 10
 #width = 10
 
+
 def createMatrix(height, width):
-	matrix = [[0]*width]*height
 
-	for j in range(height):
-		for i in range(width):
-			matrix[j][i] = 1
+	matrix = [[ 1 for i in range(height)] for j in range(width)]
 
+	for i in range(height):
+		for j in range(width):
+			matrix[i][j] = random.randint(0, 254)
+
+	return matrix
+
+
+def printMatrix(matrix):
 	for i in matrix:
 		print('\t'.join(map(str, i)))
 
-createMatrix(10, 10)
+
+def populate(matrix):
+
+
+
+populate(createMatrix(10, 10))
