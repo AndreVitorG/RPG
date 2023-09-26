@@ -22,7 +22,15 @@ def createMatrix():
 	return matrix
 
 #prints the matrix in the screen, in a more readable way
-def printMatrix(matrix):
+#def printMatrix(matrix):
+
+ #   	for i in range(len(matrix)):
+  #      	for j in range(len(matrix[0])):
+   #        		if matrix[i][j] < 100:
+    #         			matrix[i][j] = '-'
+     #      		else:
+      #        			matrix[i][j] = 'X'
+	
 	for i in matrix:
 		print('\t'.join(map(str, i)))
 
