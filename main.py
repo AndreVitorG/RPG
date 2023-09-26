@@ -1,8 +1,8 @@
 import random
 
 #HEIGHT AND WIDTH CONSTANTS
-height = 3
-width = 3
+height = 5
+width = 5
 
 #generates the initial matrix of random integers from 0 to 254
 def createMatrix():
@@ -37,7 +37,7 @@ def populate(matrix):
 		aux2 += 1
 		matrix.insert(i+aux2, [])
 
-	#VERTICAL  --  funciona mas n produz a ultima linha
+	#VERTICAL  --  funciona, porém não com mais de 1 populate
 	for k in range(len(matrix)):
 		if (k % 2) != 0:
 			for j in range(len(matrix[0])):
@@ -70,4 +70,11 @@ def populate(matrix):
 
 #printMatrix(populate(createMatrix()))
 
-printMatrix(populate(createMatrix()))
+#mat = createMatrix()
+#printMatrix(mat)
+#mat1 = populate(mat)
+#printMatrix(mat1)
+#mat2 = populate(mat1)
+#printMatrix(mat2)
+
+printMatrix(populate(populate(createMatrix())))
