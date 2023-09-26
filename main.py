@@ -22,7 +22,7 @@ def createMatrix():
 	return matrix
 
 #prints the matrix in the screen, in a more readable way
-#def printMatrix(matrix):
+def printMatrix(matrix):
 
  #   	for i in range(len(matrix)):
   #      	for j in range(len(matrix[0])):
