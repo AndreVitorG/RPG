@@ -33,35 +33,37 @@ def populate(matrix):
 	print(" ")
 	aux2 = 0
 
-	for i in range(len(matrix)):
+	for i in range(len(matrix)-1):
 		aux2 += 1
 		matrix.insert(i+aux2, [])
 
 
-	#VERTICAL  --  funciona, porém não com mais de 1 populate
+	#VERTICAL  --  funciona
 	for k in range(len(matrix)):
 		if (k % 2) != 0:
 			for j in range(len(matrix[0])):
 				if (k+1) < (len(matrix)):
 					a = matrix[k-1][j]
+##					print(a)
 					b = matrix[k+1][j]
+##					print(b)
 ##					printMatrix(matrix)
-##					print(" ")
+##					print(len(matrix))
 					if b > a:
 						matrix[k].append((random.randint(a, b)))
 					else:
 						matrix[k].append((random.randint(b, a)))
-##				elif k+1 > len(matrix) or k > len(matrix):
+##				elif k+2 > len(matrix) or k > len(matrix):
 ##					pass
 		else:
 			pass
 
 
-    #HORIZONTAL  --  funciona
-	for i in range(len(matrix)-1):
+    #HORIZONTAL  --  funciona, mas pela metade no segundo populate
+	for i in range(len(matrix)):
 		aux = 1
 		for j in range((width)-1):
-			printMatrix(matrix)
+#			printMatrix(matrix)
 			aux += 1
 ##			print(j+aux-1)
 			a = matrix[i][j+aux-1]
@@ -78,7 +80,7 @@ def populate(matrix):
 
 #printMatrix(createMatrix())
 
-printMatrix(populate(createMatrix()))
+#printMatrix(populate(createMatrix()))
 
 #mat = createMatrix()
 #printMatrix(mat)
@@ -87,4 +89,4 @@ printMatrix(populate(createMatrix()))
 #mat2 = populate(mat1)
 #printMatrix(mat2)
 
-#printMatrix(populate(populate(createMatrix())))
+printMatrix(populate(populate(createMatrix())))
