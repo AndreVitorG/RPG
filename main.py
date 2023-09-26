@@ -26,41 +26,49 @@ def printMatrix(matrix):
 	for i in matrix:
 		print('\t'.join(map(str, i)))
 
+
 # iterates all matrix values and adds a random number in between all cells
 def populate(matrix):
 	printMatrix(matrix)
 	print(" ")
-	aux = 1
 	aux2 = 0
 
 	for i in range(len(matrix)):
 		aux2 += 1
 		matrix.insert(i+aux2, [])
 
+
 	#VERTICAL  --  funciona, porém não com mais de 1 populate
 	for k in range(len(matrix)):
 		if (k % 2) != 0:
 			for j in range(len(matrix[0])):
-				if k+1 < (len(matrix)):
+				if (k+1) < (len(matrix)):
 					a = matrix[k-1][j]
 					b = matrix[k+1][j]
+#					printMatrix(matrix)
+#					print(" ")
 					if b > a:
 						matrix[k].append((random.randint(a, b)))
 					else:
 						matrix[k].append((random.randint(b, a)))
+#				elif k+1 > len(matrix) or k > len(matrix):
+#					pass
 		else:
 			pass
 
+
 	#HORIZONTAL  --  funciona apenas na primeira linha
-#	for list in matrix:
-#		for j in range(len(list)-2):
-#			aux += 1
-#			a = j+aux-1
-#			b = j+aux+1
-#			if b > a:
-#				list.insert(j+aux, random.randint(a, b))
-#			else:
-#				list.insert(j+aux, random.randint(b, a))
+	for list in matrix:
+		aux = 1
+		for j in range(len(list)):
+			printMatrix(matrix)
+			aux += 1
+			a = list[j+aux-1]
+			b = list[j+aux+1]
+			if b > a:
+				list.insert(j+aux, random.randint(a, b))
+			else:
+				list.insert(j+aux, random.randint(b, a))
 
 
 	return matrix
@@ -68,7 +76,7 @@ def populate(matrix):
 
 #printMatrix(createMatrix())
 
-#printMatrix(populate(createMatrix()))
+printMatrix(populate(createMatrix()))
 
 #mat = createMatrix()
 #printMatrix(mat)
@@ -77,4 +85,4 @@ def populate(matrix):
 #mat2 = populate(mat1)
 #printMatrix(mat2)
 
-printMatrix(populate(populate(createMatrix())))
+#printMatrix(populate(populate(createMatrix())))
