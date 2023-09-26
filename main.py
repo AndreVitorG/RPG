@@ -37,8 +37,8 @@ def createMatrix():
 
 # iterates all matrix values and adds a random number in between all cells
 def populate(matrix):
-	printMatrix(matrix)
-	print(" ")
+#	printMatrix(matrix)
+#	print(" ")
 	aux2 = 0
 
 	for i in range(len(matrix)-1):
