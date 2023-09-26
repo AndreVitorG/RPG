@@ -57,12 +57,15 @@ def populate(matrix):
 ##					pass
 		else:
 			pass
+			
+	#define a width para ser usada na próxima função		
+	width = (len(matrix[0]))-2
 
-
-    #HORIZONTAL  --  funciona, mas pela metade no segundo populate
+    
+    #HORIZONTAL  --  funciona, mas pela metade (no eixo x) no segundo populate
 	for i in range(len(matrix)):
 		aux = 1
-		for j in range((width)-1):
+		for j in range((width)):
 #			printMatrix(matrix)
 			aux += 1
 ##			print(j+aux-1)
