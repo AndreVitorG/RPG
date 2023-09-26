@@ -14,10 +14,10 @@ def createMatrix():
 		for j in range(width+1):
 			matrix[i][j] = random.randint(0, 254)
 
-	#enumerates the rows
-	for i in range(len(matrix)):
-		for j in range(len(matrix[0])+1):
-			matrix[i][0] = i
+	#enumerates the rows (colocar na hora de printar!!!!!!!!!!!!!!!!!!!!!!!)
+#	for i in range(len(matrix)):
+#		for j in range(len(matrix[0])+1):
+#			matrix[i][0] = i
 
 	return matrix
 
@@ -58,13 +58,13 @@ def populate(matrix):
 		else:
 			pass
 			
-	#define a width para ser usada na próxima função		
-	width = (len(matrix[0]))-2
+	#define a width para ser usada na próxima função(seria -2 se a enumeração das rows estivesse ativa, se for ativa apenas na hora de printar n precisa)		
+	width = (len(matrix[0]))-1
 
     
     #HORIZONTAL  --  funciona, mas pela metade (no eixo x) no segundo populate
 	for i in range(len(matrix)):
-		aux = 1
+		aux = 0
 		for j in range((width)):
 #			printMatrix(matrix)
 			aux += 1
