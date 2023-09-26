@@ -1,8 +1,8 @@
 import random
 
 #HEIGHT AND WIDTH CONSTANTS
-height = 10
-width = 10
+height = 3
+width = 3
 
 #generates the initial matrix of random integers from 0 to 254
 def createMatrix():
@@ -29,6 +29,7 @@ def printMatrix(matrix):
 # iterates all matrix values and adds a random number in between all cells
 def populate(matrix):
 	printMatrix(matrix)
+	print(" ")
 	aux = 1
 	aux2 = 0
 
@@ -36,7 +37,7 @@ def populate(matrix):
 		aux2 += 1
 		matrix.insert(i+aux2, [])
 
-	#VERTICAL
+	#VERTICAL  --  funciona mas n produz a ultima linha
 	for k in range(len(matrix)):
 		if (k % 2) != 0:
 			for j in range(len(matrix[0])):
@@ -50,16 +51,16 @@ def populate(matrix):
 		else:
 			pass
 
-	#HORIZONTAL
-	for list in matrix:
-		for j in range(len(list)-2):
-			aux += 1
-			a = j+aux-1
-			b = j+aux+1
-			if b > a:
-				list.insert(j+aux, random.randint(a, b))
-			else:
-				list.insert(j+aux, random.randint(b, a))
+	#HORIZONTAL  --  funciona apenas na primeira linha
+#	for list in matrix:
+#		for j in range(len(list)-2):
+#			aux += 1
+#			a = j+aux-1
+#			b = j+aux+1
+#			if b > a:
+#				list.insert(j+aux, random.randint(a, b))
+#			else:
+#				list.insert(j+aux, random.randint(b, a))
 
 
 	return matrix
@@ -69,4 +70,4 @@ def populate(matrix):
 
 #printMatrix(populate(createMatrix()))
 
-printMatrix(populate(populate(createMatrix())))
+printMatrix(populate(createMatrix()))
