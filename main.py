@@ -15,8 +15,8 @@ def createMatrix():
 			matrix[i][j] = random.randint(0, 254)
 
 	#enumerates the rows
-	for i in range(height):
-		for j in range(width+1):
+	for i in range(len(matrix)):
+		for j in range(len(matrix[0])+1):
 			matrix[i][0] = i
 
 	return matrix
@@ -40,7 +40,13 @@ def populate(matrix):
 	for k in range(len(matrix)):
 		if (k % 2) != 0:
 			for j in range(len(matrix[0])):
-				matrix[k].append((random.randint(0, 254)))
+				if k+1 < (len(matrix)):
+					a = matrix[k-1][j]
+					b = matrix[k+1][j]
+					if b > a:
+						matrix[k].append((random.randint(a, b)))
+					else:
+						matrix[k].append((random.randint(b, a)))
 		else:
 			pass
 
@@ -48,7 +54,12 @@ def populate(matrix):
 	for list in matrix:
 		for j in range(len(list)-2):
 			aux += 1
-			list.insert(j+aux, random.randint(0, 254))
+			a = j+aux-1
+			b = j+aux+1
+			if b > a:
+				list.insert(j+aux, random.randint(a, b))
+			else:
+				list.insert(j+aux, random.randint(b, a))
 
 
 	return matrix
@@ -56,4 +67,6 @@ def populate(matrix):
 
 #printMatrix(createMatrix())
 
-printMatrix(populate(createMatrix()))
+#printMatrix(populate(createMatrix()))
+
+printMatrix(populate(populate(createMatrix())))
