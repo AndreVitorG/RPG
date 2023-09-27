@@ -1,23 +1,23 @@
 import random
 
 # INITIAL HEIGHT AND WIDTH
-height = 8
+height = 10
 width = 8
 
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
             'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '&', '*']
 
 
-# generates the initial matrix of random integers from 0 to 280
+# generates the initial matrix of random integers from 0 to 300
 def create_matrix():
 
 	# generates de matrix filled with 1's
 	matrix = [[1 for _ in range(width+1)] for _ in range(height)]
 
-	# randomize the matrix content from 0 to 280
+	# randomize the matrix content from 0 to 300
 	for i in range(height):
 		for j in range(width+1):
-			matrix[i][j] = random.randint(0, 280)
+			matrix[i][j] = random.randint(0, 300)
 
 	return matrix
 
@@ -32,7 +32,7 @@ def print_matrix(matrix):
 			if matrix[i][j] < 100:
 				matrix[i][j] = ' '
 			else:
-				matrix[i][j] = 'III'
+				matrix[i][j] = 'XXX'
 
 	# enumerates the rows and columns (rows = numbers, columns  = letters)
 	for i in range(len(matrix)):
