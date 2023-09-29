@@ -5,7 +5,6 @@ class Map:
 
 
 	# generates the initial matrix of random integers from 0 to 300
-
 	def create_matrix(self):
 
 		height = 10
