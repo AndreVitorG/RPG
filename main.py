@@ -3,6 +3,10 @@ from map import Map
 
 #Map.print_matrix(Map.populate(Map.populate(Map.create_matrix(Map))))
 
+def print_ascii(fn):
+    f= open(fn,'r')
+    print(''.join([line for line in f]))
+
 def choose_class():
     game_class = int(input("Choose your class by typing one of the numbers below:\n"
             "(1) Warrior\n"
