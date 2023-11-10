@@ -1,5 +1,5 @@
 # RPG
-Shell RPG made in python (IN PROGRESS)
+Shell RPG made in python
 
 ------------------------------------IN PROGRESS----------------------------------------
 
